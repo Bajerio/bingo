@@ -128,7 +128,7 @@ div.container{
                 padding:5px;
                
              }
-            & div.a4{
+            & div#a4{
 
                 background:white;
                 text-align: center;
@@ -141,7 +141,7 @@ div.container{
                 padding:5px;
               
             } 
-            & div.a5{
+            & div#a5{
 
                 background:white;
                 text-align: center;
@@ -155,7 +155,7 @@ div.container{
                
             }
             
-           & div.b1{
+           & div#b1{
                 
                 height:30px;
                 width:30px;
@@ -167,7 +167,7 @@ div.container{
                 margin:10px 10px 10px 0;
                 padding:5px;
             }
-           & div.b2{
+           & div#b2{
                 
                 height:30px;
                 width:30px;
@@ -179,7 +179,7 @@ div.container{
                 margin:-50px 0 0 60px;
                 padding:5px;
             }
-           & div.b3{
+           & div#b3{
                 
                 height:30px;
                 width:30px;
@@ -191,7 +191,7 @@ div.container{
                 margin:-40px 0 0 120px;
                 padding:5px;
             }
-           & div.b4{
+           & div#b4{
                 
                 height:30px;
                 width:30px;
@@ -203,7 +203,7 @@ div.container{
                 margin:-40px 0 0 180px;
                 padding:5px;
             }
-           & div.b5{
+           & div#b5{
                 
                 height:30px;
                 width:30px;
@@ -216,7 +216,7 @@ div.container{
                 padding:5px;
             }
 
-             & div.c1{
+             & div#c1{
 
                 height:30px;
                 width:30px;
@@ -229,7 +229,7 @@ div.container{
                 padding:5px;
             }
 
-            & div.c2{
+            & div#c2{
                 
                 height:30px;
                 width:30px;
@@ -241,7 +241,7 @@ div.container{
                 margin:-50px 0 0 60px;
                 padding:5px;
             }
-           & div.c3{
+           & div#c3{
                 
                 height:30px;
                 width:30px;
@@ -253,7 +253,7 @@ div.container{
                 margin:-40px 0 0 120px;
                 padding:5px;
             }
-           & div.c4{
+           & div#c4{
                 
                 height:30px;
                 width:30px;
@@ -265,7 +265,7 @@ div.container{
                 margin:-40px 0 0 180px;
                 padding:5px;
             }
-           & div.c5{
+           & div#c5{
                 
                 height:30px;
                 width:30px;
@@ -345,7 +345,7 @@ div.container{
             width:280px;
             margin:auto;
 
-            & div.a1{
+            & div#c_a1{
 
                 background:white;
                 text-align: center;
@@ -358,7 +358,7 @@ div.container{
                 
             }
 
-            & div.a2{
+            & div#c_a2{
 
                 background:white;
                 text-align: center;
@@ -371,7 +371,7 @@ div.container{
                 padding:5px;
                
             }
-            & div.a3{
+            & div#c_a3{
 
                 background:white;
                 text-align: center;
@@ -384,7 +384,7 @@ div.container{
                 padding:5px;
                
              }
-            & div.a4{
+            & div#c_a4{
 
                 background:white;
                 text-align: center;
@@ -397,7 +397,7 @@ div.container{
                 padding:5px;
               
             } 
-            & div.a5{
+            & div#c_a5{
 
                 background:white;
                 text-align: center;
@@ -411,7 +411,7 @@ div.container{
                
             }
             
-           & div.b1{
+           & div#c_b1{
                 
                 height:30px;
                 width:30px;
@@ -423,7 +423,7 @@ div.container{
                 margin:10px 10px 10px 0;
                 padding:5px;
             }
-           & div.b2{
+           & div#c_b2{
                 
                 height:30px;
                 width:30px;
@@ -435,7 +435,7 @@ div.container{
                 margin:-50px 0 0 60px;
                 padding:5px;
             }
-           & div.b3{
+           & div#c_b3{
                 
                 height:30px;
                 width:30px;
@@ -447,7 +447,7 @@ div.container{
                 margin:-40px 0 0 120px;
                 padding:5px;
             }
-           & div.b4{
+           & div#c_b4{
                 
                 height:30px;
                 width:30px;
@@ -459,7 +459,7 @@ div.container{
                 margin:-40px 0 0 180px;
                 padding:5px;
             }
-           & div.b5{
+           & div#c_b5{
                 
                 height:30px;
                 width:30px;
@@ -472,7 +472,7 @@ div.container{
                 padding:5px;
             }
 
-             & div.c1{
+             & div#c_c1{
 
                 height:30px;
                 width:30px;
@@ -485,7 +485,7 @@ div.container{
                 padding:5px;
             }
 
-            & div.c2{
+            & div#c_c2{
                 
                 height:30px;
                 width:30px;
@@ -497,7 +497,7 @@ div.container{
                 margin:-50px 0 0 60px;
                 padding:5px;
             }
-           & div.c3{
+           & div#c_c3{
                 
                 height:30px;
                 width:30px;
@@ -509,7 +509,7 @@ div.container{
                 margin:-40px 0 0 120px;
                 padding:5px;
             }
-           & div.c4{
+           & div#c_c4{
                 
                 height:30px;
                 width:30px;
@@ -521,7 +521,7 @@ div.container{
                 margin:-40px 0 0 180px;
                 padding:5px;
             }
-           & div.c5{
+           & div#c_c5{
                 
                 height:30px;
                 width:30px;
@@ -542,7 +542,7 @@ div.container{
     div.footer{    
 
 
-        & div.rct_blanco_res{
+        & div#rct_blanco_res{
     
             width:1700px;         
             height:300px;         
