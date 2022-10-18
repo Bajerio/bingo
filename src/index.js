@@ -3,32 +3,68 @@
 
 // 1. ¿Como obtengo el valor del bombo desde el metodo footer y que se actualice con el?
 
-let valor,valor_devuelto = 0
-let numero_Random = 0
+let contador = 0
+let contador2 = 0
 
+let contadorPanel_CPU_a1 = 0
+let contadorPanel_CPU_a2 = 0
+let contadorPanel_CPU_a3 = 0
+let contadorPanel_CPU_a4 = 0
+let contadorPanel_CPU_a5 = 0
+let contadorPanel_CPU_b1 = 0
+let contadorPanel_CPU_b2 = 0
+let contadorPanel_CPU_b3 = 0
+let contadorPanel_CPU_b4 = 0
+let contadorPanel_CPU_b5 = 0
+let contadorPanel_CPU_c1 = 0
+let contadorPanel_CPU_c2 = 0
+let contadorPanel_CPU_c3 = 0
+let contadorPanel_CPU_c4 = 0
+let contadorPanel_CPU_c5 = 0
+
+let contadorPanel_PLAYER_a1 = 0
+let contadorPanel_PLAYER_a2 = 0
+let contadorPanel_PLAYER_a3 = 0
+let contadorPanel_PLAYER_a4 = 0
+let contadorPanel_PLAYER_a5 = 0
+let contadorPanel_PLAYER_b1 = 0
+let contadorPanel_PLAYER_b2 = 0
+let contadorPanel_PLAYER_b3 = 0
+let contadorPanel_PLAYER_b4 = 0
+let contadorPanel_PLAYER_b5 = 0
+let contadorPanel_PLAYER_c1 = 0
+let contadorPanel_PLAYER_c2 = 0
+let contadorPanel_PLAYER_c3 = 0
+let contadorPanel_PLAYER_c4 = 0
+let contadorPanel_PLAYER_c5 = 0
+
+let array_sin_rep = []
+let lista = []
+let numerosActivados = []
+let numerosActivados2 = []
 
 
 
 
 //PLAYER
 
-const a1_caja = document.getElementById("a1")
-const a2_caja = document.getElementById("a2")
-const a3_caja = document.getElementById("a3")
-const a4_caja = document.getElementById("a4")
-const a5_caja = document.getElementById("a5")
+const a1_player = document.getElementById("a1")
+const a2_player = document.getElementById("a2")
+const a3_player = document.getElementById("a3")
+const a4_player = document.getElementById("a4")
+const a5_player = document.getElementById("a5")
 
-const b1_caja = document.getElementById("b1")
-const b2_caja = document.getElementById("b2")
-const b3_caja = document.getElementById("b3")
-const b4_caja = document.getElementById("b4")
-const b5_caja = document.getElementById("b5")
+const b1_player = document.getElementById("b1")
+const b2_player = document.getElementById("b2")
+const b3_player = document.getElementById("b3")
+const b4_player = document.getElementById("b4")
+const b5_player = document.getElementById("b5")
 
-const c1_caja = document.getElementById("c1")
-const c2_caja = document.getElementById("c2")
-const c3_caja = document.getElementById("c3")
-const c4_caja = document.getElementById("c4")
-const c5_caja = document.getElementById("c5")
+const c1_player = document.getElementById("c1")
+const c2_player = document.getElementById("c2")
+const c3_player = document.getElementById("c3")
+const c4_player = document.getElementById("c4")
+const c5_player = document.getElementById("c5")
 
 //CPU
 const a1_cpu = document.getElementById("c_a1")
@@ -49,196 +85,590 @@ const c3_cpu = document.getElementById("c_c3")
 const c4_cpu = document.getElementById("c_c4")
 const c5_cpu = document.getElementById("c_c5")
 
+const btn_numeros = document.getElementById("btn")
+
 
 const tabla_pie = document.getElementById("rct_blanco_res")
 
-
-
-
-
-console.log("Valor 1 principio: " + valor)
-
-
-// function valor_random_bombo() {
-
-
-//     //numero_Random = Math.floor(Math.random() * 100)
-//     numero_Random = Math.floor(Math.random() * 10)
-
-// }
 
 function valor_random(min, max) {
     return Math.floor(Math.random() * (min, max) + min)
 }
 
+
+function lista_array() {
+    let lista = []
+
+    for (let i = 0; i < 100; i++) {
+
+        lista.push(i) //[ 0 ... 99 ]
+
+    }
+
+    // console.log("lista_array() ordenado")
+    // console.log(lista)
+    // console.log("lista_array() desordenado")
+    desordenar(lista)
+    return lista
+
+}
+lista_array()
+
+
 function sacar_numero() { //Accion click botón de bombo
 
-    
 
 
-    //console.log("Log a1_caja "+ a1_caja.innerHTML)
+    //let numerosActivados = new Array(100)
 
-    btn_numeros.textContent = valor_random(0,10)
-    //console.log("btn_numeros: "+btn_numeros.textContent)
+    array_sin_rep = [...new Set(lista_array(lista))] //Array sin repeticiones
 
-    valor = btn_numeros.textContent
-
-    console.log("Valor sacar_numero(): " + valor)
-
-    //2º Comparar el valor de caja a1 con el valor del bombo
+    //Cuando saca numeros hay que indicarle que si una posicion ya ha sido activada
+    //que no vuelva a aparecer
 
 
+
+    //console.log("array_sin_rep: "+array_sin_rep) //Array de 100 numeros aleatorios
+
+    //valor = array_sin_rep
+
+    let valor = 0
+    let valor2 = 0
+
+
+    for (let i = 0; i < array_sin_rep.length; i++) {
+
+        valor = array_sin_rep[i]
+
+
+    }
+    let valorString = valor.toString()
+
+
+    numerosActivados.push(valorString)
+    //numerosActivados2 = new Set(numerosActivados)
+
+
+    //Tipo de dato numerosActivados = String
+
+    // for (let i = 0; i < numerosActivados.length; i++){
+
+    //     console.log("Tipo de dato numerosActivados: "+typeof numerosActivados[i]) 
+
+
+    // }
+
+    console.log("numerosActivados: " + numerosActivados)
+    //console.log("numerosActivados 2: " + numerosActivados2)
+
+    btn_numeros.textContent = valorString
     //PLAYER
 
-    if (valor === a1_caja.innerHTML) {
 
-        a1_caja.style.backgroundColor = "green"
-        footer_table(valor)
+   if (valorString === a1_player.innerHTML) {
 
-    } else if (valor === a2_caja.innerHTML) {
-        a2_caja.style.backgroundColor = "green"
-        footer_table2(valor)
-    } else if (valor === a3_caja.innerHTML) {
-        a3_caja.style.backgroundColor = "green"
-    } else if (valor === a4_caja.innerHTML) {
-        a4_caja.style.backgroundColor = "green"
-    } else if (valor === a5_caja.innerHTML) {
-        a5_caja.style.backgroundColor = "green"
+        console.log("contadorPanel_CPU_a1: " + contadorPanel_PLAYER_a1)
 
-    } else if (valor === b1_caja.innerHTML) {
-        b1_caja.style.backgroundColor = "green"
-    } else if (valor === b2_caja.innerHTML) {
-        b2_caja.style.backgroundColor = "green"
-    } else if (valor === b3_caja.innerHTML) {
-        b3_caja.style.backgroundColor = "green"
-    } else if (valor === b4_caja.innerHTML) {
-        b4_caja.style.backgroundColor = "green"
-    } else if (valor === b5_caja.innerHTML) {
-        b5_caja.style.backgroundColor = "green"
+        if (contadorPanel_PLAYER_a1 == 0) {
 
-    } else if (valor === c1_caja.innerHTML) {
-        c1_caja.style.backgroundColor = "green"
-    } else if (valor === c2_caja.innerHTML) {
-        c2_caja.style.backgroundColor = "green"
-    } else if (valor === c3_caja.innerHTML) {
-        c3_caja.style.backgroundColor = "green"
-    } else if (valor === c4_caja.innerHTML) {
-        c4_caja.style.backgroundColor = "green"
-    } else if (valor === c5_caja.innerHTML) {
-        c5_caja.style.backgroundColor = "green"
+            contadorPanel_PLAYER_a1++
+            a1_player.style.backgroundColor = "green"
+            ganadorPlayer()
+
+        } else console.log("Valor repetido en a1")
+
+
+
+    } else if (valorString === a2_player.innerHTML) {
+
+        console.log("contadorPanel_CPU_a2: " + contadorPanel_PLAYER_a2)
+
+        if (contadorPanel_PLAYER_a2 == 0) {
+
+            contadorPanel_PLAYER_a2++
+            a2_player.style.backgroundColor = "green"
+            ganadorPlayer()
+
+        } else console.log("Valor repetido en a2")
+
+
+
+
+    } else if (valorString === a3_player.innerHTML) {
+
+        console.log("contadorPanel_CPU_a3: " + contadorPanel_PLAYER_a3)
+
+        if (contadorPanel_PLAYER_a3 == 0) {
+
+            contadorPanel_PLAYER_a3++
+            a3_player.style.backgroundColor = "green"
+            ganadorPlayer()
+
+        } else console.log("Valor repetido en a3")
+
+    } else if (valorString === a4_player.innerHTML) {
+
+        console.log("contadorPanel_CPU_a4: " + contadorPanel_PLAYER_a4)
+
+        if (contadorPanel_PLAYER_a4 == 0) {
+
+            contadorPanel_PLAYER_a4++
+            a4_player.style.backgroundColor = "green"
+            ganadorPlayer()
+
+        } else console.log("Valor repetido en a4")
+
+    } else if (valorString === a5_player.innerHTML) {
+
+        console.log("contadorPanel_CPU_a5: " + contadorPanel_PLAYER_a5)
+
+        if (contadorPanel_PLAYER_a5 == 0) {
+
+            contadorPanel_PLAYER_a5++
+            a5_player.style.backgroundColor = "green"
+            ganadorPlayer()
+
+        } else console.log("Valor repetido en a5")
     }
+
+    else if (valorString === b1_player.innerHTML) {
+
+        console.log("contadorPanel_CPU_b1: " + contadorPanel_PLAYER_b1)
+
+        if (contadorPanel_PLAYER_b1 == 0) {
+
+            contadorPanel_PLAYER_b1++
+            b1_player.style.backgroundColor = "green"
+            ganadorPlayer()
+
+        } else console.log("Valor repetido en b1")
+
+    } else if (valorString === b2_player.innerHTML) {
+        console.log("contadorPanel_CPU_b2: " + contadorPanel_PLAYER_b2)
+
+        if (contadorPanel_PLAYER_b2 == 0) {
+
+            contadorPanel_PLAYER_b2++
+            b2_player.style.backgroundColor = "green"
+            ganadorPlayer()
+
+        } else console.log("Valor repetido en b2")
+
+    } else if (valorString === b3_player.innerHTML) {
+
+        console.log("contadorPanel_CPU_b3: " + contadorPanel_PLAYER_b3)
+
+        if (contadorPanel_PLAYER_b3 == 0) {
+
+            contadorPanel_PLAYER_b3++
+            b3_player.style.backgroundColor = "green"
+            ganadorPlayer()
+
+        } else console.log("Valor repetido en b3")
+
+    } else if (valorString === b4_player.innerHTML) {
+
+        console.log("contadorPanel_CPU_b4: " + contadorPanel_PLAYER_b4)
+
+        if (contadorPanel_PLAYER_b4 == 0) {
+
+            contadorPanel_PLAYER_b4++
+            b4_player.style.backgroundColor = "green"
+            ganadorPlayer()
+
+        } else console.log("Valor repetido en b4")
+
+    } else if (valorString === b5_player.innerHTML) {
+
+        console.log("contadorPanel_CPU_b5: " + contadorPanel_PLAYER_b5)
+
+        if (contadorPanel_PLAYER_b5 == 0) {
+
+            contadorPanel_PLAYER_b5++
+            b5_player.style.backgroundColor = "green"
+            ganadorPlayer()
+
+        } else console.log("Valor repetido en b5")
+    }
+
+    else if (valorString === c1_player.innerHTML) {
+        console.log("contadorPanel_CPU_c1: " + contadorPanel_PLAYER_c1)
+
+        if (contadorPanel_PLAYER_c1 == 0) {
+
+            contadorPanel_PLAYER_c1++
+            c1_player.style.backgroundColor = "green"
+            ganadorPlayer()
+
+        } else console.log("Valor repetido en c1")
+
+    } else if (valorString === c2_player.innerHTML) {
+
+        console.log("contadorPanel_CPU_: " + contadorPanel_PLAYER_c2)
+
+        if (contadorPanel_PLAYER_c2 == 0) {
+
+            contadorPanel_PLAYER_c2++
+            c2_player.style.backgroundColor = "green"
+            ganadorPlayer()
+
+        } else console.log("Valor repetido en c2")
+
+    } else if (valorString === c3_player.innerHTML) {
+        console.log("contadorPanel_CPU_c3: " + contadorPanel_PLAYER_c3)
+
+        if (contadorPanel_PLAYER_c3 == 0) {
+
+            contadorPanel_PLAYER_c3++
+            c3_player.style.backgroundColor = "green"
+            ganadorPlayer()
+
+        } else console.log("Valor repetido en c3")
+
+    } else if (valorString === c4_player.innerHTML) {
+
+        console.log("contadorPanel_CPU_c4: " + contadorPanel_PLAYER_c4)
+
+        if (contadorPanel_PLAYER_c4 == 0) {
+
+            contadorPanel_PLAYER_c4++
+            c4_player.style.backgroundColor = "green"
+            ganadorPlayer()
+
+        } else console.log("Valor repetido en c4")
+
+    } else if (valorString === c5_player.innerHTML) {
+
+        console.log("contadorPanel_CPU_c5: " + contadorPanel_PLAYER_c5)
+
+        if (contadorPanel_PLAYER_c5 == 0) {
+
+            contadorPanel_PLAYER_c5++
+            c5_player.style.backgroundColor = "green"
+            ganadorPlayer()
+
+        } else console.log("Valor repetido en c5")
+    }
+
+
+
 
 
     //CPU
 
-    if (valor === a1_cpu.innerHTML) {
+    if (valorString === a1_cpu.innerHTML) {
 
-        a1_cpu.style.backgroundColor = "green"
-    } else if (valor === a2_cpu.innerHTML) {
+        console.log("contadorPanel_CPU_a1: " + contadorPanel_CPU_a1)
 
-        a2_cpu.style.backgroundColor = "green"
-    } else if (valor === a3_cpu.innerHTML) {
+        if (contadorPanel_CPU_a1 == 0) {
 
-        a3_cpu.style.backgroundColor = "green"
-    } else if (valor === a4_cpu.innerHTML) {
+            contadorPanel_CPU_a1++
+            a1_cpu.style.backgroundColor = "green"
+            ganadorCPU()
 
-        a4_cpu.style.backgroundColor = "green"
-    } else if (valor === a5_cpu.innerHTML) {
+        } else console.log("Valor repetido en a1")
 
-        a5_cpu.style.backgroundColor = "green"
+
+
+    } else if (valorString === a2_cpu.innerHTML) {
+
+        console.log("contadorPanel_CPU_a2: " + contadorPanel_CPU_a2)
+
+        if (contadorPanel_CPU_a2 == 0) {
+
+            contadorPanel_CPU_a2++
+            a2_cpu.style.backgroundColor = "green"
+            ganadorCPU()
+
+        } else console.log("Valor repetido en a2")
+
+
+
+
+    } else if (valorString === a3_cpu.innerHTML) {
+
+        console.log("contadorPanel_CPU_a3: " + contadorPanel_CPU_a3)
+
+        if (contadorPanel_CPU_a3 == 0) {
+
+            contadorPanel_CPU_a3++
+            a3_cpu.style.backgroundColor = "green"
+            ganadorCPU()
+
+        } else console.log("Valor repetido en a3")
+
+    } else if (valorString === a4_cpu.innerHTML) {
+
+        console.log("contadorPanel_CPU_a4: " + contadorPanel_CPU_a4)
+
+        if (contadorPanel_CPU_a4 == 0) {
+
+            contadorPanel_CPU_a4++
+            a4_cpu.style.backgroundColor = "green"
+            ganadorCPU()
+
+        } else console.log("Valor repetido en a4")
+
+    } else if (valorString === a5_cpu.innerHTML) {
+
+        console.log("contadorPanel_CPU_a5: " + contadorPanel_CPU_a5)
+
+        if (contadorPanel_CPU_a5 == 0) {
+
+            contadorPanel_CPU_a5++
+            a5_cpu.style.backgroundColor = "green"
+            ganadorCPU()
+
+        } else console.log("Valor repetido en a5")
     }
 
-    else if (valor === b1_cpu.innerHTML) {
+    else if (valorString === b1_cpu.innerHTML) {
 
-        b1_cpu.style.backgroundColor = "green"
-    } else if (valor === b2_cpu.innerHTML) {
+        console.log("contadorPanel_CPU_b1: " + contadorPanel_CPU_b1)
 
-        b2_cpu.style.backgroundColor = "green"
-    } else if (valor === b3_cpu.innerHTML) {
+        if (contadorPanel_CPU_b1 == 0) {
 
-        b3_cpu.style.backgroundColor = "green"
-    } else if (valor === b4_cpu.innerHTML) {
+            contadorPanel_CPU_b1++
+            b1_cpu.style.backgroundColor = "green"
+            ganadorCPU()
 
-        b4_cpu.style.backgroundColor = "green"
-    } else if (valor === b5_cpu.innerHTML) {
+        } else console.log("Valor repetido en b1")
 
-        b5_cpu.style.backgroundColor = "green"
+    } else if (valorString === b2_cpu.innerHTML) {
+        console.log("contadorPanel_CPU_b2: " + contadorPanel_CPU_b2)
+
+        if (contadorPanel_CPU_b2 == 0) {
+
+            contadorPanel_CPU_b2++
+            b2_cpu.style.backgroundColor = "green"
+            ganadorCPU()
+
+        } else console.log("Valor repetido en b2")
+
+    } else if (valorString === b3_cpu.innerHTML) {
+
+        console.log("contadorPanel_CPU_b3: " + contadorPanel_CPU_b3)
+
+        if (contadorPanel_CPU_b3 == 0) {
+
+            contadorPanel_CPU_b3++
+            b3_cpu.style.backgroundColor = "green"
+            ganadorCPU()
+
+        } else console.log("Valor repetido en b3")
+
+    } else if (valorString === b4_cpu.innerHTML) {
+
+        console.log("contadorPanel_CPU_b4: " + contadorPanel_CPU_b4)
+
+        if (contadorPanel_CPU_b4 == 0) {
+
+            contadorPanel_CPU_b4++
+            b4_cpu.style.backgroundColor = "green"
+            ganadorCPU()
+
+        } else console.log("Valor repetido en b4")
+
+    } else if (valorString === b5_cpu.innerHTML) {
+
+        console.log("contadorPanel_CPU_b5: " + contadorPanel_CPU_b5)
+
+        if (contadorPanel_CPU_b5 == 0) {
+
+            contadorPanel_CPU_b5++
+            b5_cpu.style.backgroundColor = "green"
+            ganadorCPU()
+
+        } else console.log("Valor repetido en b5")
     }
 
-    else if (valor === c1_cpu.innerHTML) {
+    else if (valorString === c1_cpu.innerHTML) {
+        console.log("contadorPanel_CPU_c1: " + contadorPanel_CPU_c1)
 
-        c1_cpu.style.backgroundColor = "green"
-    } else if (valor === c2_cpu.innerHTML) {
+        if (contadorPanel_CPU_c1 == 0) {
 
-        c2_cpu.style.backgroundColor = "green"
-    } else if (valor === c3_cpu.innerHTML) {
+            contadorPanel_CPU_c1++
+            c1_cpu.style.backgroundColor = "green"
+            ganadorCPU()
 
-        c3_cpu.style.backgroundColor = "green"
-    } else if (valor === c4_cpu.innerHTML) {
+        } else console.log("Valor repetido en c1")
 
-        c4_cpu.style.backgroundColor = "green"
-    } else if (valor === c5_cpu.innerHTML) {
-        c5_cpu.style.backgroundColor = "green"
+    } else if (valorString === c2_cpu.innerHTML) {
+
+        console.log("contadorPanel_CPU_: " + contadorPanel_CPU_c2)
+
+        if (contadorPanel_CPU_c2 == 0) {
+
+            contadorPanel_CPU_c2++
+            c2_cpu.style.backgroundColor = "green"
+            ganadorCPU()
+
+        } else console.log("Valor repetido en c2")
+
+    } else if (valorString === c3_cpu.innerHTML) {
+        console.log("contadorPanel_CPU_c3: " + contadorPanel_CPU_c3)
+
+        if (contadorPanel_CPU_c3 == 0) {
+
+            contadorPanel_CPU_c3++
+            c3_cpu.style.backgroundColor = "green"
+            ganadorCPU()
+
+        } else console.log("Valor repetido en c3")
+
+    } else if (valorString === c4_cpu.innerHTML) {
+
+        console.log("contadorPanel_CPU_c4: " + contadorPanel_CPU_c4)
+
+        if (contadorPanel_CPU_c4 == 0) {
+
+            contadorPanel_CPU_c4++
+            c4_cpu.style.backgroundColor = "green"
+            ganadorCPU()
+
+        } else console.log("Valor repetido en c4")
+
+    } else if (valorString === c5_cpu.innerHTML) {
+
+        console.log("contadorPanel_CPU_c5: " + contadorPanel_CPU_c5)
+
+        if (contadorPanel_CPU_c5 == 0) {
+
+            contadorPanel_CPU_c5++
+            c5_cpu.style.backgroundColor = "green"
+            ganadorCPU()
+
+        } else console.log("Valor repetido en c5")
     }
+
+
+    footer_table_bombo(valor)
+
+
+
+
 }
 
 // btn_numeros.onclick = sacar_numero
 
-const btn_numeros = document.getElementById("btn")
+
 btn_numeros.addEventListener("click", sacar_numero)
 //btn_numeros.removeEventListener("click",sacar_numero)
+
+
+
+function ganadorPlayer() {
+
+    contador++
+
+    console.log("Player: " + contador + " aciertos.")
+
+    if (contador === 15) {
+
+        btn_numeros.style.backgroundColor = "grey"
+        btn_numeros.innerHTML = "Player ha ganado"
+        btn_numeros.style.cursor = "default"
+
+        btn_numeros.removeEventListener("click", sacar_numero)
+
+    }
+
+}
+
+function ganadorCPU() {
+
+    contador2++
+    console.log("CPU aciertos: " + contador2 + " aciertos.")
+
+    if (contador2 === 15) {
+
+        btn_numeros.style.backgroundColor = "grey"
+        btn_numeros.innerHTML = "CPU ha ganado"
+        btn_numeros.style.cursor = "default"
+
+        btn_numeros.removeEventListener("click", sacar_numero)
+
+    }
+
+}
+
+
+
+
+
+
 
 
 function num_Tabla_Player() { //Generar numeros aleatorios en la tabla del Player
 
 
+    let lista = []
+    let lista2 = []
 
-    console.log("Valor 1 num_Tabla_Player(): " + valor)
+    //  1º Rellenar el array del 0 al 100
+
+    for (let i = 0; i < 100; i++) {
+
+        // 1º
+        lista.push(i)
+    }
+
+    // 2º Desordenar el array
+    desordenar(lista)
+    //console.log(lista)
+
+    for (let i = 0; i <= 14; i++) { // [0 ... 14]
+
+        lista2.push(lista[i])
 
 
-    //Creacion de 15 numeros aleatorios dentro de un array
+    }
+    //console.log(lista2)
 
-    let array = []
 
-    for (let i = 0; i < 15; i++) {
+    for (let i = lista.length; i >= 0; i--) {
 
-        // array.push(valor_random(0,99))
-        array.push(valor_random(0, 10))
+        a1_player.innerHTML = lista[i]
+        a2_player.innerHTML = lista[i + 1]
+        a3_player.innerHTML = lista[i + 2]
+        a4_player.innerHTML = lista[i + 3]
+        a5_player.innerHTML = lista[i + 4]
+
+        b1_player.innerHTML = lista[i + 5]
+        b2_player.innerHTML = lista[i + 6]
+        b3_player.innerHTML = lista[i + 7]
+        b4_player.innerHTML = lista[i + 8]
+        b5_player.innerHTML = lista[i + 9]
+
+        c1_player.innerHTML = lista[i + 10]
+        c2_player.innerHTML = lista[i + 11]
+        c3_player.innerHTML = lista[i + 12]
+        c4_player.innerHTML = lista[i + 13]
+        c5_player.innerHTML = lista[i + 14]
 
     }
 
-    //console.log(array)
-
-    for (let i = array.length; i >= 0; i--) {
-
-
-        a1_caja.innerHTML = array[i]
-        a2_caja.innerHTML = array[i + 1]
-        a3_caja.innerHTML = array[i + 2]
-        a4_caja.innerHTML = array[i + 3]
-        a5_caja.innerHTML = array[i + 4]
-
-        b1_caja.innerHTML = array[i + 5]
-        b2_caja.innerHTML = array[i + 6]
-        b3_caja.innerHTML = array[i + 7]
-        b4_caja.innerHTML = array[i + 8]
-        b5_caja.innerHTML = array[i + 9]
-
-        c1_caja.innerHTML = array[i + 10]
-        c2_caja.innerHTML = array[i + 11]
-        c3_caja.innerHTML = array[i + 12]
-        c4_caja.innerHTML = array[i + 13]
-        c5_caja.innerHTML = array[i + 14]
-
-    }
-    
 }
 
 
 num_Tabla_Player()
 
 
+function desordenar(array) {
 
+    var vRandom, x, i
+
+    for (i = array.length - 1; i > 0; i--) {
+
+        vRandom = Math.floor(Math.random() * (i + 1))
+        x = array[i]
+        array[i] = array[vRandom]
+        array[vRandom] = x
+
+    }
+
+    return array
+}
 
 
 
@@ -246,42 +676,52 @@ num_Tabla_Player()
 
 function num_Tabla_CPU() { //Generar numeros aleatorios en la tabla de la CPU
 
-    console.log("Valor 1 num_Tabla_CPU(): " + valor)
-    //console.log("Entra en num_Tabla_CPU")
+    let lista = []
+    let lista2 = []
 
-    //Creacion de 15 numeros aleatorios dentro de un array
+    //  1º Rellenar el array del 0 al 100
 
-    let array = []
+    for (let i = 0; i < 100; i++) {
 
-    for (let i = 0; i < 15; i++) {
-
-        // array.push(valor_random(0,99))
-        array.push(valor_random(0, 10))
-
+        // 1º
+        lista.push(i)
     }
 
-    //console.log(array)
+    // 2º Desordenar el array
+    desordenar(lista)
+    //console.log(lista)
 
-    for (let i = array.length; i >= 0; i--) {
+    for (let i = 0; i <= 14; i++) { // [0 ... 14]
+
+        lista2.push(lista[i])
 
 
-        a1_cpu.innerHTML = array[i]
-        a2_cpu.innerHTML = array[i + 1]
-        a3_cpu.innerHTML = array[i + 2]
-        a4_cpu.innerHTML = array[i + 3]
-        a5_cpu.innerHTML = array[i + 4]
+    }
+    //console.log(lista2)
 
-       b1_cpu.innerHTML = array[i + 5]
-        b2_cpu.innerHTML = array[i + 6]
-        b3_cpu.innerHTML = array[i + 7]
-        b4_cpu.innerHTML = array[i + 8]
-        b5_cpu.innerHTML = array[i + 9]
 
-        c1_cpu.innerHTML = array[i + 10]
-        c2_cpu.innerHTML = array[i + 11]
-        c3_cpu.innerHTML = array[i + 12]
-        c4_cpu.innerHTML = array[i + 13]
-        c5_cpu.innerHTML = array[i + 14]
+    for (let i = lista.length; i >= 0; i--) {
+
+
+
+
+        a1_cpu.innerHTML = lista[i]
+        a2_cpu.innerHTML = lista[i + 1]
+        a3_cpu.innerHTML = lista[i + 2]
+        a4_cpu.innerHTML = lista[i + 3]
+        a5_cpu.innerHTML = lista[i + 4]
+
+        b1_cpu.innerHTML = lista[i + 5]
+        b2_cpu.innerHTML = lista[i + 6]
+        b3_cpu.innerHTML = lista[i + 7]
+        b4_cpu.innerHTML = lista[i + 8]
+        b5_cpu.innerHTML = lista[i + 9]
+
+        c1_cpu.innerHTML = lista[i + 10]
+        c2_cpu.innerHTML = lista[i + 11]
+        c3_cpu.innerHTML = lista[i + 12]
+        c4_cpu.innerHTML = lista[i + 13]
+        c5_cpu.innerHTML = lista[i + 14]
 
     }
 }
@@ -290,8 +730,33 @@ function num_Tabla_CPU() { //Generar numeros aleatorios en la tabla de la CPU
 num_Tabla_CPU()
 
 
-function footer_table(valor_num_bombo) { //Tabla pie resultados
+function footer_table_bombo(valor_num_bombo) { //Tabla pie resultados
 
+    //console.log("Texto del bombo: " + valor_num_bombo)
+    //Numeros del bombo
+    const elemento_del_bombo = document.createElement('nuevo_div')
+
+    elemento_del_bombo.style.display = "inline-block"
+    elemento_del_bombo.style.backgroundColor = "white"
+    elemento_del_bombo.style.textAlign = "center"
+    elemento_del_bombo.style.color = "black"
+    elemento_del_bombo.style.fontWeight = "bold"
+    elemento_del_bombo.style.fontSize = "20px"
+    elemento_del_bombo.style.height = "30px"
+    elemento_del_bombo.style.width = "30px"
+    elemento_del_bombo.style.padding = "5px"
+    elemento_del_bombo.style.marginBottom = "15px"
+    elemento_del_bombo.style.marginRight = "15px"
+    elemento_del_bombo.prepend(valor_num_bombo)
+
+    tabla_pie.append(elemento_del_bombo)
+
+}
+
+
+
+
+function footer_table(valor_num_bombo) { //Tabla pie resultados
 
 
     // CAJA ELEMENTO : a1_caja
@@ -311,17 +776,17 @@ function footer_table(valor_num_bombo) { //Tabla pie resultados
     elemento_creado_a1.prepend(a1_caja.textContent)
 
     if (valor_num_bombo === a1_caja.innerHTML) {
-       
+
         tabla_pie.append(elemento_creado_a1)
 
-    } 
+    }
 
 
 }
 
 function footer_table2(valor_num_bombo) {
 
-    // CAJA ELEMENTO : a2_caja
+    // CAJA ELEMENTO : a2_player
     const elemento_creado_a2 = document.createElement('nuevo_div2')
 
     elemento_creado_a2.style.display = "inline-block"
@@ -335,31 +800,13 @@ function footer_table2(valor_num_bombo) {
     elemento_creado_a2.style.padding = "5px"
     elemento_creado_a2.style.marginBottom = "15px"
     elemento_creado_a2.style.marginRight = "15px"
-    elemento_creado_a2.prepend(a2_caja.textContent)
-    
-   if (valor_num_bombo === a2_caja.innerHTML) {
+    elemento_creado_a2.prepend(a2_player.textContent)
 
-           
-            tabla_pie.append(elemento_creado_a2)
-           
+    if (valor_num_bombo === a2_player.innerHTML) {
+
+
+        tabla_pie.append(elemento_creado_a2)
+
     }
 
 }
-
-/*
-    & div#a1{
-
-                background:white;
-                text-align: center;
-                color:black;
-                font-weight:bold;
-                font-size:20px;
-                height:30px;
-                width:30px;
-                padding:5px;
-                
-            }
-
-*/
-
-

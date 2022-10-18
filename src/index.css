@@ -291,7 +291,7 @@ div.container{
         border:8px solid black;
         background:radial-gradient(var(--blanco_gris));
         margin-top:-21px;
-
+        text-decoration:none;
      
         & div#btn{
 
@@ -307,6 +307,7 @@ div.container{
             color:black;
             cursor:pointer;
             font-style:italic;
+            text-decoration:none;
             
         }
  
